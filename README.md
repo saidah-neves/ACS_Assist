@@ -19,7 +19,8 @@ Now you can run the script from command line.
 Note that in the index.js file’s the code on line 6 will grab all given command line arguments after the third. On line 9, it will print out Hello World, and any provided arguments
 i.e. 
 
->>node . John
+node . John
 Hello World John
->>node . 1,2,3,4,5,6
+
+node . 1,2,3,4,5,6
 Hello World 1,2,3,4,5,6
