@@ -1,0 +1,128 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fmodern\fcharset0 Courier;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red22\green21\blue22;\red255\green255\blue255;
+\red89\green138\blue67;\red202\green202\blue202;\red70\green137\blue204;\red140\green211\blue254;\red67\green192\blue160;
+\red212\green214\blue154;\red194\green126\blue101;\red205\green173\blue106;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c11373\c10980\c11373;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c41569\c60000\c33333;\cssrgb\c83137\c83137\c83137;\cssrgb\c33725\c61176\c83922;\cssrgb\c61176\c86275\c99608;\cssrgb\c30588\c78824\c69020;
+\cssrgb\c86275\c86275\c66667;\cssrgb\c80784\c56863\c47059;\cssrgb\c84314\c72941\c49020;}
+\margl1440\margr1440\vieww10260\viewh8760\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 - If you have done so firs create your package.jon file using the steps list here:\
+https://docs.npmjs.com/creating-a-package-json-file\
+\
+Once created take the following steps to \cf3 \cb4 \strokec3 configure the package to be able to run it at a command line\cf2 \strokec2 \
+\cb1 \
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf2 - Open you terminal on macOS/Linux\
+- Change your current directory to where you want to save your project or where you already have a project located (i.e user/username/Desktop). Enter the following commands to create a new folder for the project:\
+\pard\pardeftab720\fi0\sl280\sa240\partightenfactor0
+
+\f1 \cf2 mkdir yourProject\
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf2 cd YourProject\
+
+\f0 open the 
+\f1 \outl0\strokewidth0 YourProject
+\f0 \outl0\strokewidth0  folder in a text editor\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 Under \outl0\strokewidth0  
+\f1 YourProject
+\f0 \outl0\strokewidth0  create a new folder named 
+\f1 bin
+\f0 \
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf2 Add a new file to the 
+\f1 bin
+\f0  folder and call it 
+\f1 index.js
+\f0 \
+Open the 
+\f1 index.js
+\f0  file in your text editor and copy the following code\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf5 \cb4 \strokec5 #!/usr/bin/env node\cf6 \strokec6 \
+\
+\pard\tx10800\pardeftab720\sl360\partightenfactor0
+\cf5 \strokec5 //Grab provided args.\cf6 \strokec6 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf7 \strokec7 const\cf6 \strokec6  [,, ...\cf8 \strokec8 args\cf6 \strokec6 ] = \cf8 \strokec8 process\cf6 \strokec6 .\cf8 \strokec8 argv\cf6 \strokec6 \
+\
+\cf5 \strokec5 //Print hello world provided args.\cf6 \strokec6 \
+\cf9 \strokec9 console\cf6 \strokec6 .\cf10 \strokec10 log\cf6 \strokec6  (\cf11 \strokec11 `Hello World \cf7 \strokec7 $\{\cf8 \strokec8 args\cf7 \strokec7 \}\cf11 \strokec11 `\cf6 \strokec6 )\cb1 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f3 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+Save the index.js file\
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Save the 
+\f1 package.json
+\f0  file to 
+\f1 \outl0\strokewidth0 YourProject
+\f0 \outl0\strokewidth0  in the root of the project in your text editor. Change the 
+\f1 main
+\f0  value to 
+\f1 bin/index.js
+\f0 . Add a new key for 
+\f1 bin
+\f0  with the following text.\
+\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf8 \cb4 \strokec8 "bin"\cf6 \strokec6 : \{\
+    \cf8 \strokec8 "hello"\cf6 \strokec6 : \cf11 \strokec11 "./bin/index.js"\cf6 \strokec6 \
+  \},\cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf2 \strokec2 \
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+\cf2 Your package.json
+\f0  file should now look similar to:\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf6 \cb4 \strokec6 \{\
+  \cf8 \strokec8 "name"\cf6 \strokec6 : \cf11 \strokec11 \'93yourPackageName\cf6 \strokec6 ,\
+  \cf8 \strokec8 "version"\cf6 \strokec6 : \cf11 \strokec11 "1.0.0"\cf6 \strokec6 ,\
+  \cf8 \strokec8 "description"\cf6 \strokec6 : \cf11 \strokec11 ""\cf6 \strokec6 ,\
+  \cf8 \strokec8 "main"\cf6 \strokec6 : \cf11 \strokec11 "bin/index.js"\cf6 \strokec6 ,\
+  \cf8 \strokec8 "scripts"\cf6 \strokec6 : \{\
+    \cf8 \strokec8 "test"\cf6 \strokec6 : \cf11 \strokec11 "echo \cf12 \strokec12 \\"\cf11 \strokec11 Error: no test specified\cf12 \strokec12 \\"\cf11 \strokec11  && exit 1"\cf6 \strokec6 \
+  \},\
+  \cf8 \strokec8 "bin"\cf6 \strokec6 : \{\
+    \cf8 \strokec8 "hello"\cf6 \strokec6 : \cf11 \strokec11 "./bin/index.js"\cf6 \strokec6 \
+  \},\
+  \cf8 \strokec8 "repository"\cf6 \strokec6 : \{\
+    \cf8 \strokec8 "type"\cf6 \strokec6 : \cf11 \strokec11 "git"\cf6 \strokec6 ,\
+    \cf8 \strokec8 "url"\cf6 \strokec6 : \cf11 \strokec11 "git+https://github.com/yourRepo.git"\cf6 \strokec6 \
+  \},\
+  \cf8 \strokec8 "author"\cf6 \strokec6 : \cf11 \strokec11 ""\cf6 \strokec6 ,\
+  \cf8 \strokec8 "license"\cf6 \strokec6 : \cf11 \strokec11 "ISC"\cf6 \strokec6 ,\
+  \cf8 \strokec8 "bugs"\cf6 \strokec6 : \{\
+    \cf8 \strokec8 "url"\cf6 \strokec6 : \cf11 \strokec11 "https://github.com/\'85\'85..\'94\cf6 \strokec6 \
+  \},\
+  \cf8 \strokec8 "homepage"\cf6 \strokec6 : \cf11 \strokec11 "https://github.com/\'85\'85\'85\'94\cf6 \strokec6 \
+\}\
+\cb1 \
+\pard\pardeftab720\sl280\sa240\partightenfactor0
+
+\f0 \cf2 \strokec2 You can now run your code by entering the following from the command line.\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf2 node .\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2 \cf6 \strokec6 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f1 \cf2 \strokec2 \
+}
