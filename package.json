@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/saidah-neves/ACS_Assist/issues"
   },
-  "homepage": "https://github.com/saidah-neves/ACS_Assist#readme"
+  "homepage": "https://github.com/saidah-neves/ACS_Assist#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ibm-watson": "^5.7.0"
+  }
 }

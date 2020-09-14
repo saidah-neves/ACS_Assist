@@ -1,20 +1,18 @@
+const DISCOVERY_ENVIRONMENT_ID = 'system';
+const DISCOVERY_COLLECTION_ID = 'news';
+
 const fs = require('fs');
 const DiscoveryV1 = require('ibm-watson/discovery/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
 const discovery = new DiscoveryV1({
   version: '2019-04-30',
-  
-  //authenticator: new IamAuthenticator({
-    //apikey: '',
-  //}),
-
   url: 'https://api.us-south.discovery.watson.cloud.ibm.com/instances/3b5bd372-ed9b-4bbb-bce9-a93526329807',
 });
 
 const addDocumentParams = {
-  environmentId: '32d99835-9310-4873-a29d-b2be6aaa1fad',
-  collectionId: 'aabcf357-e6dd-4487-aa2b-d2bfc65876c0',
+  environmentId: DISCOVERY_ENVIRONMENT_ID,
+  collectionId: DISCOVERY_COLLECTION_ID,
   file: fs.createReadStream('./test-doc4.html'),
 };
 
@@ -28,8 +26,8 @@ discovery.addDocument(addDocumentParams)
   });
 
   const queryParams = {
-    environmentId: '32d99835-9310-4873-a29d-b2be6aaa1fad',
-    collectionId: 'aabcf357-e6dd-4487-aa2b-d2bfc65876c0',
+    environmentId: DISCOVERY_ENVIRONMENT_ID,
+    collectionId: DISCOVERY_COLLECTION_ID,
   };
   
   discovery.query(queryParams)
