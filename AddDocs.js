@@ -3,7 +3,6 @@ const DISCOVERY_COLLECTION_ID = 'news';
 
 const fs = require('fs');
 const DiscoveryV1 = require('ibm-watson/discovery/v1');
-const { IamAuthenticator } = require('ibm-watson/auth');
 
 const discovery = new DiscoveryV1({
   version: '2019-04-30',
@@ -24,16 +23,3 @@ discovery.addDocument(addDocumentParams)
   .catch(err => {
     console.log('error:', err);
   });
-
-  const queryParams = {
-    environmentId: DISCOVERY_ENVIRONMENT_ID,
-    collectionId: DISCOVERY_COLLECTION_ID,
-  };
-  
-  discovery.query(queryParams)
-    .then(queryResponse => {
-      console.log(JSON.stringify(queryResponse, null, 2));
-    })
-    .catch(err => {
-      console.log('error:', err);
-    });

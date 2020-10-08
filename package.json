@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "hello": "./bin/index.js"
+    "getTopics": "./bin/runquery.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/saidah-neves/ACS_Assist#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "ibm-watson": "^5.7.0"
+    "ibm-watson": "^5.7.0",
+    "shelljs": "^0.8.4"
   }
 }
